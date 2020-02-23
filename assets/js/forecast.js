@@ -1,4 +1,4 @@
-const key = 'X9tTzanamhEGkLu4HZ4fBRkBcbtarClH';
+const key = 'LruXks6FZyz9MMI9qmYJTLusLa5g0shN';
 
 
 const getForcast = async (id) => {

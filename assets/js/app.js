@@ -35,7 +35,6 @@ const updateUI = data => {
         card.classList.remove('hidden');
     }
 
-
 } 
 
 cityFrom.addEventListener('submit', e => {
@@ -43,9 +42,16 @@ cityFrom.addEventListener('submit', e => {
 
     const city = cityFrom.city.value.trim();
     console.log(city)
+    localStorage.setItem('city', city);
     cityFrom.reset();
 
     updateCity(city)
     .then(data => updateUI(data))
-    .catch(err => console.log(err,'sad'));
+    .catch(err => console.log(err));
 });
+
+if (localStorage.getItem('city')) {
+    updateCity(localStorage.getItem('city'))
+        .then(data => updateUI(data))
+        .catch(err => console.log(err, 'sad'));
+}
